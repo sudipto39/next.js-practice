@@ -1,5 +1,21 @@
 import mongoose, {Schema, Document} from "mongoose";
 // import { unique } from "next/dist/build/utils";
+export interface Message extends Document {
+  content: string;
+  createdAt: Date;
+}
+
+const MessageSchema: Schema<Message> = new mongoose.Schema({
+  content: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    required: true,
+    default: Date.now,
+  },
+});
 
 export interface User extends Document {
     name: string;
