@@ -1,11 +1,11 @@
-import type { AuthOptions, Session, User } from 'next-auth';
+import type { NextAuthOptions , Session, User } from 'next-auth';
 import { JWT } from 'next-auth/jwt';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcrypt';
 import dbConnect from '@/lib/dbConnect';
 import UserModel from '@/model/User';
 
-export const authOptions: AuthOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       id: 'credentials',
