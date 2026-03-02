@@ -25,7 +25,8 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL("/sign-in", request.url));
   }
 
-  return NextResponse.redirect(new URL("/home", request.url));
+  // return NextResponse.redirect(new URL("/home", request.url));
+  return NextResponse.next();
 }
 
 // Alternatively, you can use a default export:
